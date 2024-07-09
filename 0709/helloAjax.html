@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const xhr = new XMLHttpRequest();
+
+      function changeDiv(doc) {
+        const newMenuArr = doc.split(",");
+        console.log(doc.split(","));
+        const div = document.querySelector("div");
+        const newUl = document.createElement("ul");
+        div.appendChild(newUl);
+        newMenuArr.forEach((elem) => {
+          const li = document.createElement("li");
+          const text = document.createTextNode(elem);
+          li.appendChild(text);
+          newUl.appendChild(li);
+        });
+      }
+      function hello() {
+        xhr.open("GET", "http://10.4.2.100:8080/res.jsp");
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            const status = xhr.status;
+            if (status == 200) {
+              changeDiv(xhr.responseText);
+            }
+          }
+        };
+        xhr.send(null);
+      }
+
+      function GetMenu() {
+        xhr.open("GET", "http://10.4.2.100:8080/food.jsp");
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            const status = xhr.status;
+            if (status == 200) {
+              changeDiv(xhr.responseText);
+            }
+          }
+        };
+        xhr.send(null);
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Ajax Test</h3>
+    <hr />
+    <div></div>
+    <button onclick="hello()" id="btn">Click</button>
+    <button onclick="GetMenu()" id="btn">Get Menu</button>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- DOM_mission.html 
+   1. 버튼을 눌렀을때  브라우저에 '유레카'를 출력하시오. 
+   2. 버튼을 눌렀을때  브라우저에 '유레카'를 번호와 함께 출력하시오. 
+      유레카-1
+      유레카-2
+      유레카-3
+      유레카-4
+   3. 버튼을 눌렀을때  브라우저에 '유레카'를 번호와 함께 출력하시오.  
+      그리고 텍스트 옆에 '삭제'버튼을 함께 출력하시오.
+
+   3. 두번째 삭제버튼을 눌렀을때  누른 삭제버튼과 함께 
+      옆의 텍스트가 삭제되도록 하시오
+
+    유레카-1 <button>삭제</button> <br>
+    유레카-3 <button>삭제</button> <br>
+    유레카-4 <button>삭제</button> <br>      
+-->
+  <body>
+    <script>
+      let idx = 1;
+      function handleDelete(idx) {
+        const par = document.getElementById(idx);
+
+        if (par.parentNode) {
+          par.parentNode.removeChild(par);
+        }
+      }
+      function clicked() {
+        const button = document.getElementById("d1");
+        const div = document.createElement("div");
+        div.setAttribute("id", idx);
+        const text = document.createTextNode("유레카-" + idx);
+        const DeleteButton = document.createElement("button", "삭제");
+        const DeleteText = document.createTextNode("삭제");
+        DeleteButton.appendChild(DeleteText);
+        DeleteButton.setAttribute("id", "del" + idx);
+        DeleteButton.setAttribute("onclick", `handleDelete(${idx})`);
+        div.appendChild(text);
+        div.appendChild(DeleteButton);
+        d1.appendChild(div);
+        console.log("유레카");
+        idx++;
+      }
+    </script>
+    <button onclick="clicked()" id="btn">불금</button><br />
+    <div id="d1"></div>
+  </body>
+</html>

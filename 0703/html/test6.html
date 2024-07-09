@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>심플계산기</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+    <script>
+      /*
+        문서 조작1) 엘리먼트 속성 사용하기
+        element.innerHTML = 변경할 값 
+        element.innerText = 변경할 값
+        
+        ==> 엘리먼트 객체 얻어오기 
+            document.getElementById("id값")
+            document.getElementsByName("name값")
+            document.getElementsByTagName("태그명")
+            document.getElementsByClassName("클래스명")
+            document.querySelector("선택자")
+            등등..
+
+        중요 !! 
+        element는 반드시 엘리먼트 객체여야 한다.
+        <div> { 여기가 inner임 } </div>
+
+        문서조작 2) 도큐먼트(생성)/노드(조작) 객체 사용하기
+      */
+    </script>
+  </head>
+  <body>
+    <script src="../js/myfun2.js"></script>
+    <h3>심플계산기</h3>
+    <hr />
+    <form name="calcForm">
+      <input name="su1" type="text" />
+      +
+      <input name="su2" type="text" />
+      <input onclick="calc()" type="button" value="계산" /><br />
+      <div
+        id="parent"
+        style="
+          width: 100vw;
+          justify-content: center;
+          display: flex;
+          flex-direction: row;
+        "
+      >
+        <!-- <div id="result" name="결과값" /> -->
+      </div>
+    </form>
+  </body>
+</html>

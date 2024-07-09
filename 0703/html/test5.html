@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>심플계산기</title>
+    <style>
+      * {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="../js/myfun.js"></script>
+    <h3>심플계산기</h3>
+    <hr />
+    <form method="post" name="calcForm" action="/html/test3.html">
+      <input name="su1" type="text" />
+      +
+      <input name="su2" type="password" />
+      <input onclick="calc()" type="submit" value="계산" /><br />
+      결과값:
+      <input name="result" type="text" />
+    </form>
+  </body>
+</html>

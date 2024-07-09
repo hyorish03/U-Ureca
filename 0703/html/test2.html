@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(new Array(5));
+      let arr = Array.from(new Array(5), (x, i) => i + 1);
+      for (let elem of arr) {
+        document.write(elem + "<br>");
+      }
+    </script>
+  </body>
+</html>

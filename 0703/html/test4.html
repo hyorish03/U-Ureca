@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let index = 0;
+      function changeImg() {
+        
+        const imgArr = ["../img/won.jpg", "../img/wedding.jpg"];
+        // const img = document.querySelector("img");
+        const img = document.getElementById("unique");
+        if (index == 1) index = 0;
+        else index = 1;
+        img.src = imgArr[index];
+      }
+    </script>
+    <div>
+      <img
+        id="unique"
+        onclick="changeImg()"
+        src="../img/won.jpg"
+        width="200px"
+      />
+    </div>
+  </body>
+</html>
