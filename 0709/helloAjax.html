@@ -8,8 +8,7 @@
       const xhr = new XMLHttpRequest();
 
       function changeDiv(doc) {
-        const newMenuArr = doc.split(",");
-        console.log(doc.split(","));
+        const newMenuArr = doc.trim().split(",");
         const div = document.querySelector("div");
         const newUl = document.createElement("ul");
         div.appendChild(newUl);
@@ -45,6 +44,13 @@
         };
         xhr.send(null);
       }
+
+      xhr.onload = function () {
+        if (this.status == 200) {
+          const doc = JSON.parse(this.responseText);
+          console.log(doc);
+        }
+      };
     </script>
   </head>
   <body>

@@ -6,17 +6,6 @@ function CreateDiv(wrong, result) {
   var divNode = document.createElement("div");
   var txtNode = document.createTextNode("결과는 " + result);
   divNode.appendChild(txtNode);
-
-  // obj = document.getElementById("parent");
-  // if (document.getElementById("result") != null) {
-  //   obj.removeChild(document.getElementById("result"));
-  // }
-  // document.getElement;
-  // newDiv = document.createElement("div");
-  // newDiv.setAttribute("id", "result");
-  // newDiv.style.color = wrong ? "red" : "black";
-  // newDiv.innerHTML = wrong ? result : "결과는 " + result;
-  // obj.appendChild(newDiv);
 }
 
 function calc() {
